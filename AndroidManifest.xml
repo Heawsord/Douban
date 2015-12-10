@@ -5,11 +5,13 @@
     android:versionName="1.0.1" >
 
     <uses-sdk
-        android:minSdkVersion="19"
+        android:minSdkVersion="10"
         android:targetSdkVersion="19" />
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 
     <application
         android:allowBackup="true"
@@ -61,6 +63,10 @@
             android:theme="@android:style/Theme.NoTitleBar">
             
         </activity>
+        <activity 
+            android:name=".MyReadActivity"
+            android:label="@string/myread"
+            android:theme="@android:style/Theme.NoTitleBar"></activity>
     </application>
 
 </manifest>

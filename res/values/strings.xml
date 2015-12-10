@@ -9,5 +9,6 @@
     <string name="my_douban">我的豆瓣</string>
     <string name="loginIn">登录</string>
     <string name="myinfo">我的信息</string>
+    <string name="myread">我读</string>
 
 </resources>

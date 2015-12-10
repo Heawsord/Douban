@@ -119,7 +119,7 @@ public class MainTabActivity extends TabActivity {
 			SharedPreferences sp=getSharedPreferences("config",Context.MODE_PRIVATE);
 			Editor editor=sp.edit();
 			editor.putString("accesstoken","");
-			editor.putString("tokensecret", "");
+			editor.putString("tokensercret", "");
 			editor.commit();
 			break;
 		}

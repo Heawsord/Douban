@@ -65,7 +65,7 @@ public class NetUtil {
 		DoubanService myService = new DoubanService("黑马小瓣瓣", apiKey,
 				secret);
 
-		System.out.println("please paste the url in your webbrowser, complete the authorization then come back:");
+		Log.d("NetUtil","please paste the url in your webbrowser, complete the authorization then come back:");
 		String url =myService.getAuthorizationUrl(null);
 		Log.d("NetUtil",url);
 		//System.out.println(url);
@@ -98,9 +98,10 @@ public class NetUtil {
 		post.setEntity(entity);
 		HttpResponse response=client.execute(post);
 		Log.d("NetUtil",response.getStatusLine().getStatusCode()+"");
-		System.out.println(response.getStatusLine().getStatusCode());
+		//System.out.println(response.getStatusLine().getStatusCode());
 		Source source=new Source(response.getEntity().getContent());
-		System.out.println(source.toString());
+		//System.out.println(source.toString());
+		Log.d("NetUtil","查看登录过程"+source.toString());
 		
 		//获取登录成功的cookies
 		CookieStore cookies=client.getCookieStore();
@@ -116,7 +117,7 @@ public class NetUtil {
 	    namevaluepairs1.add(new BasicNameValuePair("ck","-RKb"));
 	    namevaluepairs1.add(new BasicNameValuePair("oauth_token",oauth_token));
 	    namevaluepairs1.add(new BasicNameValuePair("oauth_callback",""));
-	    namevaluepairs1.add(new BasicNameValuePair("ssid","94eb6bd8"));
+	    namevaluepairs1.add(new BasicNameValuePair("ssid","0cbb188a"));
 	    namevaluepairs1.add(new BasicNameValuePair("confirm","同意"));
 		UrlEncodedFormEntity entity1=new UrlEncodedFormEntity(namevaluepairs1,"utf-8");
 		post1.setEntity(entity1);
@@ -130,8 +131,8 @@ public class NetUtil {
 		ArrayList<String> tokens=myService.getAccessToken();
 		String accesstoken=tokens.get(0);
 		String tokensecret=tokens.get(1);
-		Log.d("NetUtil",accesstoken);
-		Log.d("NetUtil",tokensecret);
+		Log.d("NetUtil","令牌："+accesstoken);
+		Log.d("NetUtil","密钥："+tokensecret);
 		//将令牌和密钥存入SharedPreferences中
 		SharedPreferences sp=context.getSharedPreferences("config",context.MODE_PRIVATE);
 		Editor editor=sp.edit();

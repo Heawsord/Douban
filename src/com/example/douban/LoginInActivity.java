@@ -62,7 +62,6 @@ public class LoginInActivity extends Activity implements OnClickListener{
 	};
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.login);
 		// я╟ур©ь╪Ч
